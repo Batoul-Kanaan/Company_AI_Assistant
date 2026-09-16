@@ -13,7 +13,7 @@ MONGO_DATABASE = os.getenv(
     "company_ai_assistant",
 )
 
-client = MongoClient(MONGO_URI)
+client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=3000)
 
 try:
     client.admin.command("ping")
